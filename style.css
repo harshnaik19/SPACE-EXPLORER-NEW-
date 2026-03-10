@@ -1,0 +1,245 @@
+body{
+margin:0;
+font-family:'Orbitron',sans-serif;
+color:white;
+overflow-x:hidden;
+}
+
+/* video background */
+
+#bgVideo{
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+object-fit:cover;
+z-index:-3;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+z-index:-2;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 50px;
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(8px);
+z-index:100;
+box-sizing:border-box;
+}
+
+.logo{
+font-size:24px;
+letter-spacing:5px;
+font-weight:600;
+}
+
+/* MENU */
+
+.menu{
+list-style:none;
+display:flex;
+gap:36px;
+font-size:19px;
+font-weight:500;
+white-space:nowrap;
+margin:0;
+padding:0;
+}
+
+.menu li{
+cursor:pointer;
+opacity:0.9;
+transition:0.25s;
+}
+
+.menu li:hover{
+color:#6aa3ff;
+transform:scale(1.05);
+}
+
+/* hamburger */
+
+.hamburger{
+display:none;
+font-size:26px;
+cursor:pointer;
+}
+
+/* PAGES */
+
+.page{
+display:none;
+flex-direction:column;
+align-items:center;
+margin-top:120px;
+padding:40px;
+text-align:center;
+}
+
+.page.active{
+display:flex;
+}
+
+/* HEADINGS */
+
+h1{
+font-size:44px;
+letter-spacing:2px;
+margin-bottom:25px;
+}
+
+h2{
+font-size:26px;
+margin-top:25px;
+}
+
+/* CONTROLS */
+
+.controls{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+/* glass inputs */
+
+.glass{
+padding:12px 20px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.3);
+background:rgba(255,255,255,0.08);
+color:white;
+font-size:16px;
+}
+
+select{
+background:rgba(255,255,255,0.08);
+color:white;
+border:1px solid rgba(255,255,255,0.3);
+}
+
+select option{
+background:#111;
+color:white;
+}
+
+/* buttons */
+
+button{
+padding:10px 22px;
+border:none;
+border-radius:8px;
+background:linear-gradient(135deg,#4f7cff,#8a5cff);
+color:white;
+cursor:pointer;
+}
+
+/* orbit canvas */
+
+#orbitCanvas{
+margin-top:30px;
+width:500px;
+height:500px;
+background:rgba(0,0,0,0.35);
+border-radius:12px;
+}
+
+/* ISS tracker */
+
+#issTracker{
+margin-top:20px;
+width:700px;
+height:350px;
+background:black;
+border-radius:12px;
+box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+#issData{
+margin-top:15px;
+font-size:20px;
+line-height:2;
+letter-spacing:1px;
+}
+
+/* rockets */
+
+.rocketTimeline{
+display:flex;
+flex-wrap:wrap;
+gap:25px;
+justify-content:center;
+max-width:900px;
+}
+
+.rocketCard{
+width:240px;
+padding:22px;
+background:rgba(255,255,255,0.09);
+border-radius:12px;
+font-size:16px;
+line-height:1.6;
+}
+
+/* quiz */
+
+.quiz{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu{
+flex-direction:column;
+background:rgba(0,0,0,0.95);
+position:absolute;
+top:65px;
+right:0;
+width:240px;
+padding:25px;
+gap:18px;
+display:none;
+}
+
+.menu.show{
+display:flex;
+}
+
+.hamburger{
+display:block;
+}
+
+#orbitCanvas{
+width:90vw;
+height:90vw;
+}
+
+#issTracker{
+width:92vw;
+height:300px;
+}
+
+}

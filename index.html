@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<title>Space Explorer</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<video autoplay muted loop playsinline id="bgVideo">
+<source src="assets/earth.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<header class="navbar">
+
+<div class="logo">SPACE EXPLORER</div>
+
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<nav>
+
+<ul class="menu">
+
+<li onclick="showPage('orbit')">Orbit</li>
+<li onclick="showPage('iss')">ISS</li>
+<li onclick="showPage('missions')">Missions</li>
+<li onclick="showPage('learn')">Learn</li>
+<li onclick="showPage('rockets')">Rocket Evolution</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- ORBIT PAGE -->
+
+<section id="orbit" class="page active">
+
+<h1>Orbit Explorer</h1>
+
+<div class="controls">
+
+<select id="planet" class="glass">
+
+<option value="sun">Sun</option>
+<option value="mercury">Mercury</option>
+<option value="venus">Venus</option>
+<option value="earth">Earth</option>
+<option value="moon">Moon</option>
+<option value="mars">Mars</option>
+<option value="jupiter">Jupiter</option>
+<option value="saturn">Saturn</option>
+<option value="uranus">Uranus</option>
+<option value="neptune">Neptune</option>
+
+</select>
+
+<input type="number" id="altitude" class="glass" placeholder="Altitude (km)">
+
+<button onclick="calculateOrbit()">Calculate Orbit</button>
+
+</div>
+
+<p id="orbitResult"></p>
+
+<canvas id="orbitCanvas"></canvas>
+
+</section>
+
+<!-- ISS TRACKER -->
+
+<section id="iss" class="page">
+
+<h1>ISS Live Tracker</h1>
+
+<div id="issData"></div>
+
+<canvas id="issTracker"></canvas>
+
+</section>
+
+<!-- MISSIONS -->
+
+<section id="missions" class="page">
+
+<h1>Future Missions</h1>
+
+<p>
+NASA Artemis will return humans to the Moon and prepare humanity for Mars exploration.
+</p>
+
+</section>
+
+<!-- LEARN -->
+
+<section id="learn" class="page">
+
+<h1>Learn Space</h1>
+
+<h2>Weight On Other Planets</h2>
+
+<input type="number" id="weight" class="glass" placeholder="Weight on Earth (kg)">
+
+<button onclick="calculateWeight()">Calculate</button>
+
+<pre id="weightResult"></pre>
+
+<h2>Space Quiz</h2>
+
+<p>Which planet has the strongest gravity?</p>
+
+<div class="quiz">
+
+<button onclick="checkAnswer('earth')">Earth</button>
+<button onclick="checkAnswer('mars')">Mars</button>
+<button onclick="checkAnswer('jupiter')">Jupiter</button>
+<button onclick="checkAnswer('mercury')">Mercury</button>
+
+</div>
+
+<p id="quizResult"></p>
+
+<h2>Did You Know?</h2>
+
+<button onclick="randomFact()">Show Fact</button>
+
+<p id="fact"></p>
+
+</section>
+
+<!-- ROCKET EVOLUTION -->
+
+<section id="rockets" class="page">
+
+<h1>Rocket Evolution</h1>
+
+<div class="rocketTimeline">
+
+<div class="rocketCard">
+<h2>V2 Rocket</h2>
+<p>First rocket to reach space.</p>
+</div>
+
+<div class="rocketCard">
+<h2>Saturn V</h2>
+<p>Apollo Moon rocket.</p>
+</div>
+
+<div class="rocketCard">
+<h2>Space Shuttle</h2>
+<p>Reusable spacecraft.</p>
+</div>
+
+<div class="rocketCard">
+<h2>Falcon 9</h2>
+<p>Reusable SpaceX rocket.</p>
+</div>
+
+<div class="rocketCard">
+<h2>Starship</h2>
+<p>Future Mars rocket.</p>
+</div>
+
+</div>
+
+</section>
+
+<script src="planets.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
